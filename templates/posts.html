@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container">
+    <h1>Friends</h1>
+    <h2>Might change this from friends to posts? Or put posts on home</h2>
+    <form method="post">
+        <input type="text" placeholder="Search friends">
+    </form>
+
+    <!--- Friends -->
+    <h3>{{ user|title }}</h3>
+    <h3>Friends</h3>
+    <h3>For some reason, friends don't load on this page</h3>
+    <h3>Even though it's the same as profile friends</h3>
+      <div class="row affix">
+        <div class="col">
+          <ul class="list-friends">
+              {% for friend in friends %}
+              <li class="list-group-item">{{ friend.username }}</li>
+              {% endfor %}
+              <li class="list-group-item">Testing</li>
+            </ul>
+        </div>
+      </div>
+     </div>
+    <!--- End of friends-->
+
+{% endblock %}

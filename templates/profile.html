@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="container">
+    <h1>Profile</h1>
+    <h2> Will adopt the bottom look soon </h2>
+    <p>Username: {{ user|title }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>status: {{ user.userprofile.status }}</p>
+    <p>favorite anime: {{ user.userprofile.favorite_anime }}</p>
+    <p>Status form userprofile: {{ user.userprofile.status }}</p>
+
+</div>
+  //-->
+
+    <!-- if user.userprofile.image -->
+    <!-- user.userprofile.image.url -->
+
+<!--- Content of page -->
+<div class="parent-container d-flex flex-wrap flex-lg-nowrap flex-md-nowrap">
+<!--- Profile Section -->
+<div class="container-fluid padding col-lg-3 col-md-3 col-xs-12 col-sm-12 col-xl-3">
+    <h3 align="center">{{ user|title }}</h3>
+     <div class="row affix">
+       <div class="col">
+           <ul class="list-group">
+              <li class="list-group-item" align="center"><img src="https://thehaletelescope.com/wp-content/uploads/2018/10/weeb.jpg" class="col-4 col-sm-4 col-md-10 col-lg-10 img-fluid"></li>
+              <li class="list-group-item">Location</li>
+              <li class="list-group-item">Bio</li>
+              <li class="list-group-item">{{ user.userprofile.status }}</li>
+              <li class="list-group-item">Favorite Anime: {{ user.userprofile.favorite_anime }}</li>
+            </ul>
+        </div>
+     </div>
+ </div>
+ <!--- End of profile column -->
+
+<!--- Top 5 section -->
+<div class="container-fluid align-self-center padding ml-auto">
+<h3 align="center">Your top 5</h3>
+<div class="row text-center padding">
+	<div class="col-12 col-sm-4 col-md col-lg">
+			<i class="fas fa-code"></i>
+			<h3>#1</h3>
+			<p>Whatever you want</p>
+	</div>
+	<div class="col-12 col-sm-4 col-md col-lg">
+			<i class="fas fa-bold"></i>
+			<h3>#2</h3>
+			<p>Whatever you want</p>
+	</div>
+	<div class="col-12 col-sm-4 col-md col-lg">
+			<i class="fas fa-css3"></i>
+			<h3>#3</h3>
+			<p>Whatever you want</p>
+	</div>
+  <div class="col-md-6 col-sm col-lg">
+			<i class="fas fa-css3"></i>
+			<h3>#4</h3>
+			<p>Whatever you want</p>
+	</div>
+  <div class="col-md-6 col-sm col-lg">
+			<i class="fas fa-css3"></i>
+			<h3>#5</h3>
+			<p>Whatever you want</p>
+	</div>
+</div>
+<hr class="my-4">
+</div>
+<!--- End of top 5-->
+
+
+<!--- Friends -->
+<div class="container-fluid padding col-lg-2 col-md-3 col-xs-12 col-sm-12 col-xl-2">
+    <h3 align="center">Friends</h3>
+     <div class="row affix">
+       <div class="col">
+           <ul class="list-friends">
+             {% for friend in friends %}
+              <li class="list-group-item">{{ friend.username|title }}</li>
+              {% endfor %}
+            </ul>
+        </div>
+     </div>
+ </div>
+<!--- End of friends-->
+
+</div> <!--- Closes the Container with the profile and the top 5 -->
+
+
+
+{% endblock %}
