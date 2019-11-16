@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     "anime.apps.AnimeConfig",
     "accounts.apps.AccountsConfig",
     "bootstrap4",
-    "hello",
 ]
 
 MIDDLEWARE = [

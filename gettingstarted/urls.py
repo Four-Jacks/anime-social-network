@@ -8,7 +8,6 @@ from django.contrib.auth import views as auth_views
 
 admin.autodiscover()
 
-import hello.views
 
 # To add a new path, first import the app:
 # import blog
