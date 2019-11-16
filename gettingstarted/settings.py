@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "anime.apps.AnimeConfig",
+    "accounts.apps.AccountsConfig",
+    "bootstrap4",
     "hello",
 ]
 
