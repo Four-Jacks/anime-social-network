@@ -48,16 +48,15 @@ class UserFriend(models.Model):
     current_user = models.ForeignKey(User, related_name='has_friend', null=True, on_delete=models.PROTECT)
 
     @classmethod
-    def remove_friend(cls, current_user, new_friend):
+    def add_friend(cls, current_user, new_friend):
         friend, created = cls.objects.get_or_create(
             current_user=current_user
         )
         friend.users.add(new_friend)
 
     @classmethod
-    def lose_friend(cls, current_user, new_friend):
+    def remove_friend(cls, current_user, new_friend):
         friend, created = cls.objects.get_or_create(
             current_user=current_user
         )
         friend.users.remove(new_friend)
-

@@ -41,38 +41,21 @@
  <!--- End of profile column -->
 
 <!--- Top 5 section -->
-<div class="container-fluid align-self-center padding ml-auto">
+<div class="container-fluid padding ml-auto">
   <hr class="my-4">
 <h3 align="center">Your Anime</h3>
-
-
-<div class="row text-center padding">
-	<div class="col-12 col-sm-4 col-md col-lg">
-			<i class="fas fa-code"></i>
-			<h3>#1</h3>
-			<p>Whatever you want</p>
-	</div>
-	<div class="col-12 col-sm-4 col-md col-lg">
-			<i class="fas fa-bold"></i>
-			<h3>#2</h3>
-			<p>Whatever you want</p>
-	</div>
-	<div class="col-12 col-sm-4 col-md col-lg">
-			<i class="fas fa-css3"></i>
-			<h3>#3</h3>
-			<p>Whatever you want</p>
-	</div>
-  <div class="col-md-6 col-sm col-lg">
-			<i class="fas fa-css3"></i>
-			<h3>#4</h3>
-			<p>Whatever you want</p>
-	</div>
-  <div class="col-md-6 col-sm col-lg">
-			<i class="fas fa-css3"></i>
-			<h3>#5</h3>
-			<p>Whatever you want</p>
-	</div>
-</div>
+   <div class="row affix" style="overflow:auto;max-height: 450px;padding-top:20px;">
+      {% for anime in animes %}
+      <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 border border-secondary">
+           <div style="padding-top:20px;" align="center">
+               <p>{{ anime.title }}</p>
+           </div>
+           <div style="padding-bottom:20px;" align="center">
+               <a href="{% url 'anime:anime_detail' pk=anime.id %}"><img src="{{ anime.img_url }}" width="100" height="140"></a>
+           </div>
+      </div>
+         {% endfor %}
+    </div>
 <hr class="my-4">
 </div>
 <!--- End of top 5-->
