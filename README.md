@@ -1,7 +1,8 @@
 ## Running Locally
 
 Make sure you have Python 3.7 [installed locally](http://install.python-guide.org).
-and Heroku CLI installed (https://devcenter.heroku.com/articles/heroku-cli)
+
+Heroku CLI installed (https://devcenter.heroku.com/articles/heroku-cli)
 
 ```sh
 $ git clone git@github.com:Four-Jacks/anime-social-network.git
