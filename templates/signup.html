@@ -19,7 +19,7 @@
     <form  class="form" method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
-        <input type="submit" class="btn btn-primary" value="Sign up">
+        <input type="submit" onclick="return confirm('Our website does not use HTTPS which means that your password may be susceptible to man in the middle attacks. As a result, we ask that the password is unique to this site. Would you like to continue with this password?')" class="btn btn-primary" value="Sign up">
     </form>
 </body>
 {% endblock %}
