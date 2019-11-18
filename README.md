@@ -3,6 +3,7 @@
 Make sure you have Python 3.7 [installed locally](http://install.python-guide.org).
 
 Heroku CLI installed (https://devcenter.heroku.com/articles/heroku-cli)
+(need an account)
 
 ```sh
 $ git clone git@github.com:Four-Jacks/anime-social-network.git
