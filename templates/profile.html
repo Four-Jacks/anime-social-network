@@ -1,4 +1,10 @@
 {% extends "base.html" %}
+
+{% block title %}
+<title>Profile</title>
+{% endblock %}
+
+
 {% block content %}
 <!-- <div class="container">
     <h1>Profile</h1>
@@ -18,11 +24,11 @@
 <!--- Content of page -->
 <div class="parent-container d-flex flex-wrap flex-lg-nowrap flex-md-nowrap">
 <!--- Profile Section -->
-<div class="container-fluid padding col-lg-3 col-md-3 col-xs-12 col-sm-12 col-xl-3">
-    <h3 align="center">{{ user|title }}</h3>
+<div class="container-fluid col-lg-3 col-md-4 col-xs-12 col-sm-12 col-xl-3">
      <div class="row affix">
        <div class="col">
-           <ul class="list-group">
+           <ul class="list-group profile">
+              <h3 align="center">{{ user|title }}</h3>
               <li class="list-group-item" align="center"><img src="https://thehaletelescope.com/wp-content/uploads/2018/10/weeb.jpg" class="col-4 col-sm-4 col-md-10 col-lg-10 img-fluid"></li>
               <li class="list-group-item">Location</li>
               <li class="list-group-item">Bio</li>
@@ -36,6 +42,7 @@
 
 <!--- Top 5 section -->
 <div class="container-fluid align-self-center padding ml-auto">
+  <hr class="my-4">
 <h3 align="center">Your top 5</h3>
 <div class="row text-center padding">
 	<div class="col-12 col-sm-4 col-md col-lg">
@@ -69,12 +76,12 @@
 <!--- End of top 5-->
 
 
-<!--- Friends -->
-<div class="container-fluid padding col-lg-2 col-md-3 col-xs-12 col-sm-12 col-xl-2">
-    <h3 align="center">Friends</h3>
+<!--- Friends  style="overflow: auto" can make friends list scrollable-->
+<div class="container-fluid col-lg-2 col-md-2 col-xs-2 col-sm-10 col-xl-2">
      <div class="row affix">
        <div class="col">
-           <ul class="list-friends">
+           <ul class="list-friends" style="overflow:auto;max-height: 450px;padding-top:20px;">
+             <h3 align="center">Friends</h3>
              {% for friend in friends %}
               <li class="list-group-item">{{ friend.username|title }}</li>
               {% endfor %}

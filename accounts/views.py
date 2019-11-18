@@ -58,11 +58,18 @@ def logout_view(request):
 
 
 def view_profile(request, pk=None):
-    anime = UserAnime.objects.get(current_anime=request.user)
-    animes = anime.anime.all()
+    try:
+        anime = UserAnime.objects.get(current_anime=request.user)
+        animes = anime.anime.all()
+    except UserAnime.DoesNotExist:
+        animes = None
 
-    friend = UserFriend.objects.get(current_user=request.user)
-    friends = friend.friend.all()
+    try:
+        friend = UserFriend.objects.get(current_user=request.user)
+        friends = friend.friend.all()
+    except UserFriend.DoesNotExist:
+        friends = None
+
     if pk:
         user = User.objects.get(pk=pk)
     else:

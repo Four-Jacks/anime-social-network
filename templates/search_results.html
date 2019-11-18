@@ -1,22 +1,24 @@
 {% extends "base.html" %}
+{% block title %}
+<title>Search Results</title>
+{% endblock %}
+
 {% block content %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Anime Social</title>
-</head>
-<body>
-    <h1>Search Results</h1>
-    <url>
-        {% for anime in object_list %}
-
-        <li>
-
-            <img alt="anime poster" src="{{ anime.img_url }}" width="100" height="140"> {{ anime.title }}
-
-        </li>
-
-        {% endfor %}
-    </url>
-</body>
+  <h1>Search Results</h1>
+  <!--- Search results -->
+  <div class="container-fluid">
+       <div class="row affix">
+         {% for anime in object_list %}
+         <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 border border-secondary">
+               <div style="padding-top:20px;" align="center">
+                   <p>{{ anime.title }}</p>
+               </div>
+               <div style="padding-bottom:20px;" align="center">
+                   <a href="{% url 'anime:anime_detail' pk=anime.id %}"><img src="{{ anime.img_url }}" width="100" height="140"></a>
+               </div>
+          </div>
+             {% endfor %}
+       </div>
+   </div>
+  <!--- End of friends-->
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+<title>{{ object.title }}</title>
+{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+<!--- Search results -->
+  <div class="row affix">
+    <div class="col">
+      <h1 align="center">{{ object.title }}</h1>
+      <ul class="list-group" style="list-style-type:none;">
+        <li align="center"><img src="{{ object.img_url }}" width="200" height="260"></li>
+        <p style="max-width: 1000px; word-wrap: break-word">{{ object.synopsis }}</p>
+        <li class="list-group-item">Title english: {{ object.title_eng }}</li>
+        <li class="list-group-item">Type: {{ object.type }}</li>
+        <li class="list-group-item">Premiered: {{ object.season }}</li>
+        <li class="list-group-item">Status: {{ object.status }}</li>
+        <li class="list-group-item">Air date: {{ object.air_date }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
