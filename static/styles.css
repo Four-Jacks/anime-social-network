@@ -1,0 +1,89 @@
+.navbar {
+    padding: .8rem !important;
+    background-color:#0af7d0;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #FFFFFF;
+}
+
+.nav-link {
+  font-size: 1.1em !important;
+  color:#000000 !important;
+}
+
+.body {
+  background-color:#52fade;
+}
+
+.list-group-item {
+  background-color:#52fade !important;
+}
+
+@media {
+    .profile {
+      margin-left: 0rem !important;
+    }
+    .list-friends {
+      margin-right: 2rem !important;
+    }
+}
+
+@media (min-width: 576px) {
+  .profile {
+    margin-left: 0rem !important;
+  }
+  .list-friends {
+    margin-right: -3rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile {
+    margin-left: -3rem !important;
+  }
+  .list-friends {
+    margin-right: -3.8rem !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .profile {
+    margin-left: -3rem !important;
+  }
+  .list-friends {
+    margin-right: -5rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .profile {
+    margin-left: -4rem !important;
+  }
+  .list-friends {
+    margin-right: -7 !important;
+  }
+}
+
+
+.footer {
+  background-color:#0af7d0;
+  color:#000000;
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
