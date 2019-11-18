@@ -14,7 +14,12 @@ $ createdb python_getting_started
 $ python manage.py migrate
 $ python manage.py collectstatic
 
-$ heroku local
+If you’re on Microsoft Windows system, run this:
+
+heroku local web -f Procfile.windows
+If you’re on a Unix system, just use the default Procfile by running:
+
+heroku local web
 ```
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
