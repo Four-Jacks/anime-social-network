@@ -94,3 +94,12 @@ def change_friend(request, operation, pk):
     elif operation == 'remove':
         UserAnime.remove_anime(request.user, new_friend)
     return redirect('/')
+
+
+def view_friend(request, pk=None):
+    if pk:
+        user = User.objects.get(pk=pk)
+    else:
+        user = request.user
+    args = {'user': user}
+    return render(request, 'friend.html', args)

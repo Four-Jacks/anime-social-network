@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Anime Social</title>
+<title>Youwu</title>
 {% endblock %}
 
 
@@ -15,7 +15,7 @@
     <div class="container-fluid">
          <div class="row affix">
            {% for anime in object_list %}
-           <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 border border-secondary">
+           <div class="col col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 border border-secondary">
                  <div style="padding-top:20px;" align="center">
                      <a href="{% url 'anime:anime_detail' pk=anime.id %}"><img src="{{ anime.img_url }}" width="100" height="140"></a>
                  </div>

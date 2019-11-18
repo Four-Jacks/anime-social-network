@@ -4,22 +4,7 @@
 <title>Profile</title>
 {% endblock %}
 
-
 {% block content %}
-<!-- <div class="container">
-    <h1>Profile</h1>
-    <h2> Will adopt the bottom look soon </h2>
-    <p>Username: {{ user|title }}</p>
-    <p>Email: {{ user.email }}</p>
-    <p>status: {{ user.userprofile.status }}</p>
-    <p>favorite anime: {{ user.userprofile.favorite_anime }}</p>
-    <p>Status form userprofile: {{ user.userprofile.status }}</p>
-
-</div>
-  //-->
-
-    <!-- if user.userprofile.image -->
-    <!-- user.userprofile.image.url -->
 
 <!--- Content of page -->
 <div class="parent-container d-flex flex-wrap flex-lg-nowrap flex-md-nowrap">
@@ -43,35 +28,21 @@
 <!--- Top 5 section -->
 <div class="container-fluid align-self-center padding ml-auto">
   <hr class="my-4">
-<h3 align="center">Your Anime</h3>
-
-
+<h3 align="center">Your top 5</h3>
 <div class="row text-center padding">
-	<div class="col-12 col-sm-4 col-md col-lg">
-			<i class="fas fa-code"></i>
-			<h3>#1</h3>
-			<p>Whatever you want</p>
-	</div>
-	<div class="col-12 col-sm-4 col-md col-lg">
-			<i class="fas fa-bold"></i>
-			<h3>#2</h3>
-			<p>Whatever you want</p>
-	</div>
-	<div class="col-12 col-sm-4 col-md col-lg">
-			<i class="fas fa-css3"></i>
-			<h3>#3</h3>
-			<p>Whatever you want</p>
-	</div>
-  <div class="col-md-6 col-sm col-lg">
-			<i class="fas fa-css3"></i>
-			<h3>#4</h3>
-			<p>Whatever you want</p>
-	</div>
-  <div class="col-md-6 col-sm col-lg">
-			<i class="fas fa-css3"></i>
-			<h3>#5</h3>
-			<p>Whatever you want</p>
-	</div>
+
+    {% for anime in animes %}
+         <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 border border-secondary">
+               <div style="padding-top:20px;" align="center">
+                   <p>{{ anime.title }}</p>
+               </div>
+               <div style="padding-bottom:20px;" align="center">
+                   <a href="{% url 'anime:anime_detail' pk=anime.id %}"><img src="{{ anime.img_url }}" width="100" height="140"></a>
+               </div>
+          </div>
+             {% endfor %}
+
+
 </div>
 <hr class="my-4">
 </div>
@@ -85,7 +56,9 @@
            <ul class="list-friends" style="overflow:auto;max-height: 450px;padding-top:20px;">
              <h3 align="center">Friends</h3>
              {% for friend in friends %}
-              <li class="list-group-item"><a href="{% url 'friend_view' pk=friend.id %}">{{ friend.username }}</a></li>
+
+              <li class="list-group-item">{{ friend.username|title }}</li>
+
               {% endfor %}
             </ul>
         </div>

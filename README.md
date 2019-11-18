@@ -15,10 +15,9 @@ $ python manage.py migrate
 $ python manage.py collectstatic
 
 If you’re on Microsoft Windows system, run this:
-
 heroku local web -f Procfile.windows
-If you’re on a Unix system, just use the default Procfile by running:
 
+If you’re on a Unix system, just use the default Procfile by running:
 heroku local web
 ```
 

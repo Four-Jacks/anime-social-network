@@ -1,6 +1,10 @@
 .navbar {
     padding: .8rem !important;
-    background-color:#0af7d0;
+    background-color:#282828;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #505050;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -9,15 +13,41 @@
 
 .nav-link {
   font-size: 1.1em !important;
-  color:#000000 !important;
+  color:#FFFFFF !important;
 }
 
 .body {
-  background-color:#52fade;
+  background-color:#181818;
 }
 
+h3 {
+  color:#FFFFFF !important;
+}
+
+h2 {
+  color:#FFFFFF !important;
+}
+
+h1 {
+  color:#FFFFFF !important;
+}
+
+.form {
+  color:#FFFFFF !important;
+}
+
+
 .list-group-item {
-  background-color:#52fade !important;
+  background-color:#303030 !important;
+  color:#FFFFFF !important;
+}
+
+.col {
+  color:#FFFFFF !important;
+}
+
+.row {
+  color:#FFFFFF !important;
 }
 
 @media {
@@ -67,8 +97,8 @@
 
 
 .footer {
-  background-color:#0af7d0;
-  color:#000000;
+  background-color:#282828;
+  color:#000000 !important;
 }
 
 /*
