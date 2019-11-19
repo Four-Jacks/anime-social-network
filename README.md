@@ -1,3 +1,14 @@
+Youwu.life
+A web based social network made for those who desire a place to keep 
+track of the anime they love and to explore the anime that friends
+love in one place. It gives the user the ability to create a custom user 
+profile and add anime from a large database that should contain the anime 
+of their choosing as well as a friends profile to keep up with what they 
+are watching, without the need to piece information together about anime
+from multipal external websites.
+
+
+
 ## Running Locally
 
 Make sure you have Python 3.7 [installed locally](http://install.python-guide.org).
