@@ -65,7 +65,7 @@
       <div class="row affix">
           {% for friend in friends %}
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-              <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+              <div style="padding-bottom:10px;padding-top:10px;background:#282828;" align="center">
                  <a href="{% url 'friend_view' pk=friend.id %}">{{ friend.username|title }}</a>
               </div>
          </div>
