@@ -69,8 +69,8 @@ hr {
   color:#000000 !important;
 }
 
-@media (min-width: 1100px) {
-    .footer {
+@media (min-width: 1400px) {
+    .extra {
          padding-top:20rem !important;
     }
 }
