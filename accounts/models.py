@@ -7,8 +7,9 @@ from anime.models import Anime
 # Creates a user profile object for user preferences
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    status = models.CharField(max_length=100, default='')
-    favorite_anime = models.CharField(max_length=100, default='')
+    status = models.CharField(max_length=256, default='I love anime')
+    avatar = models.CharField(max_length=256, default='https://thehaletelescope.com/wp-content/uploads/2018/10/weeb.jpg')
+    favorite_anime = models.CharField(max_length=256, default='Cowboy Bebop')
 
     def __str__(self):
         return self.user.username
@@ -19,6 +20,9 @@ class UserProfile(models.Model):
 
     post_save.connect(create_profile, sender=User)
 
+    def edit_profile(sender,**kwargs):
+        user_profile = UserProfile.objects.create(user=kwargs['instance'])
+
 
 # Creates anime to user relationships
 class UserAnime(models.Model):
@@ -28,7 +32,8 @@ class UserAnime(models.Model):
 
     @classmethod
     def add_anime(cls, current_anime, added_animepk):
-        added_anime = User.objects.get(pk=current_anime)
+        current_anime = User.objects.get(pk=current_anime)
+        #added_anime = User.objects.get(pk=current_anime)
         user, added = cls.objects.get_or_create(
             current_anime=current_anime
         )

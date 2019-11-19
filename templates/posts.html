@@ -5,14 +5,18 @@
 {% endblock %}
 
 {% block content %}
-    <h1 align="center">Users</h1>
-     <div class="container" style="max-width: 400px;">
-          <div class="row affix justify-content-center" style="overflow:auto;max-height:540px;">
+    <h1>Users</h1>
+     <div class="container">
+          <div class="row affix justify-content-center">
               {% for user in users %}
-              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+              <div class="col col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3">
+                  <div style="padding-top:20px;" align="center">
                      <a href="{% url 'friend_view' pk=user.id %}">{{ user|title }}</a>
                   </div>
+                  <div style="padding-bottom:20px;" align="center">
+                      <a href="{% url 'friend_view' pk=user.id %}"><img src="{{ user.avatar }}" width="100" height="140"></a>
+                  </div>
+
              </div>
             {% endfor %}
           </div>

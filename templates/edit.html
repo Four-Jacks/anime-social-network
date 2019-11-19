@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Youwu</title>
+{% endblock %}
+
+
+
+{% block content %}
+{% load bootstrap4 %}
+
+  <h1 align="center">Edit Profile</h1>
+  <div class="container">
+    <div class="row affix justify-content-center">
+        <div class="col col-10 col-sm-10 col-md-9 col-lg-6 col-xl-5">
+        <form  class="form" method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+        <input type="submit" class="btn btn-primary" value="Save Changes">
+      </form>
+    </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+{% endblock %}

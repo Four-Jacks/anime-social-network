@@ -29,9 +29,12 @@
        <div class="col">
            <ul class="list-group profile" style="display:table-row;" >
               <h3 align="center">{{ user|title }}</h3>
-              <li class="list-group-item" align="center"><img src="https://thehaletelescope.com/wp-content/uploads/2018/10/weeb.jpg" class="col-4 col-sm-4 col-md-10 col-lg-10 img-fluid"></li>
+              <li class="list-group-item" align="center"><img src="{{ user.userprofile.avatar }}" class="col-4 col-sm-4 col-md-10 col-lg-10 img-fluid"></li>
               <li class="list-group-item">{{ user.userprofile.status }}</li>
               <li class="list-group-item">Favorite Anime: {{ user.userprofile.favorite_anime }}</li>
+              <li align="center" style="list-style-type:none"><a href="/edit/"
+                  class='btn btn-primary'>Edit profile</a>
+              </li>
             </ul>
         </div>
      </div>
@@ -41,9 +44,9 @@
 <!--- Top 5 section -->
 <div class="container-fluid col-lg-8 col-md-7 col-12 col-sm-12 col-xl-8">
 <h3 align="center">Your Anime</h3>
-   <div class="row affix" style="overflow:auto;max-height: 540px;">
+   <div class="row affix">
       {% for anime in animes %}
-      <div class="col-6 col-sm-6 col-md col-lg col-xl border border-secondary">
+      <div class="col-6 col-sm-6 col-md col-lg col-xl">
            <div style="padding-top:20px;" align="center">
                <p>{{ anime.title }}</p>
            </div>
@@ -60,7 +63,7 @@
 <!--- Friends  style="overflow: auto" can make friends list scrollable-->
 <div class="container col-lg-2 col-md-2 col-8 col-sm-7 col-xl-2">
   <h3 align="center">Friends</h3>
-     <div class="row affix" style="overflow:auto;max-height: 540px;">
+     <div class="row affix">
          {% for friend in friends %}
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">

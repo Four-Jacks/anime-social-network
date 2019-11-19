@@ -21,7 +21,8 @@ from accounts.views import (login_view,
                             view_profile,
                             change_anime,
                             change_friend,
-                            view_friend)
+                            view_friend,
+                            edit_profile)
 
 from django.contrib.auth import views as auth_views
 
@@ -30,11 +31,12 @@ urlpatterns = [
     path('login/', login_view),
     path('register/', register_view),
     path('logout/', logout_view),
-    path('profile/', view_profile),
+    path('profile/', include('accounts.urls')),
     path('search/', include('anime.urls')),
     path('posts/', include('posts.urls')),
     path('', include('anime.urls')),
     path('logout/',auth_views.LogoutView.as_view()),
+    path('edit/',edit_profile),
 
     path('profile/<int:pk>/', view_friend, name='friend_view'),
 

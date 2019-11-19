@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.views import View
 from anime.models import Anime
-from accounts.models import UserAnime, UserFriend
+from accounts.models import UserAnime, UserFriend, UserProfile
 
 from django.contrib.auth import (
     authenticate,
@@ -11,7 +11,7 @@ from django.contrib.auth import (
     logout
 )
 
-from .forms import UserLoginForm, UserRegisterForm
+from .forms import UserLoginForm, UserRegisterForm, EditProfileForm
 
 
 def login_view(request):
@@ -77,6 +77,22 @@ def view_profile(request, pk=None):
 
     args = {'user': user, 'animes': animes, 'friends': friends}
     return render(request, 'profile.html', args)
+
+
+def edit_profile(request):
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST)
+        if form.is_valid():
+            profile = UserProfile.objects.get(user=request.user)
+            profile.status = form.cleaned_data.get('status')
+            profile.avatar = form.cleaned_data.get('avatar')
+            profile.favorite_anime = form.cleaned_data.get('favorite_anime')
+            profile.save()
+            return redirect('/profile/')
+    else:
+        form = EditProfileForm()
+        args = {'form': form}
+        return render(request, 'edit.html', args)
 
 
 def change_anime(request, operation, pk):
