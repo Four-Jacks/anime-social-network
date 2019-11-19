@@ -28,16 +28,16 @@
         <div class="row affix">
            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <h3 align="center">{{ user|title }}</h3>
-                <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+                <div style="padding-bottom:10px;padding-top:10px;background:#282828;" align="center">
                   <img src="{{ user.userprofile.avatar }}" class="col-4 col-sm-4 col-md-10 col-lg-10 img-fluid">
                 </div>
-                <div style="padding-bottom:20px;padding-top:20px;padding-left:5px;background:#282828;">
+                <div style="padding-bottom:10px;padding-top:10px;padding-left:5px;background:#282828;">
                   {{ user.userprofile.status }}
                 </div>
-                <div style="padding-bottom:20px;padding-top:20px;padding-left:5px;background:#282828;">
+                <div style="padding-bottom:10px;padding-top:10px;padding-left:5px;background:#282828;">
                   Favorite Anime: {{ user.userprofile.favorite_anime }}
                 </div>
-                <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+                <div style="padding-bottom:10px;padding-top:10px;background:#282828;" align="center">
                 <a href="/edit/" class='btn btn-primary'>Edit profile</a>
                 </div>
            </div>
@@ -70,7 +70,7 @@
      <div class="row affix">
          {% for friend in friends %}
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-             <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+             <div style="padding-bottom:10px;padding-top:10px;background:#282828;" align="center">
                 <a href="{% url 'friend_view' pk=friend.id %}">{{ friend.username|title }}</a>
              </div>
         </div>
