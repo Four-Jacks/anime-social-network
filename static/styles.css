@@ -8,7 +8,17 @@
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: #FFFFFF;
+  color: #707070;
+}
+
+a {
+  color: #FFFFFF !important;
+}
+a:visited {
+  color: #636;
+}
+a:hover, a:active, a:focus {
+  color:#909090 !important;
 }
 
 .nav-link {
