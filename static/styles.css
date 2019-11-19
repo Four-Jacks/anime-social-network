@@ -1,6 +1,6 @@
 .navbar {
     padding: .8rem !important;
-    background-color:#282828;
+    background-color:#282828 !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
