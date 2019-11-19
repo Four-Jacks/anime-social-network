@@ -71,7 +71,7 @@ hr {
 
 @media (min-width: 1200px) {
     .footer {
-        position: absolute;
+        position: absolute !important;
     }
 }
 
