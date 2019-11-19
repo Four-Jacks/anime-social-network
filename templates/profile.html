@@ -24,7 +24,7 @@
 <!--- Content of page -->
 <div class="parent-container d-flex flex-wrap flex-lg-nowrap">
 <!--- Profile Section -->
-  <div class="container-fluid col-lg-3 col-md-7 col-12 col-sm-11 col-xl-3">
+  <div class="container-fluid col-lg-3 col-md-4 col-12 col-sm-11 col-xl-3">
         <div class="row affix">
            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <h3 align="center">{{ user|title }}</h3>
@@ -46,7 +46,7 @@
  <!--- End of profile column -->
 
 <!--- Top 5 section -->
-<div class="container-fluid col-lg-7 col-md-8 col-12 col-sm-12 col-xl-7">
+<div class="container-fluid col-lg-7 col-md-6 col-12 col-sm-12 col-xl-7">
 <h3 align="center">Your Anime</h3>
    <div class="row affix">
       {% for anime in animes %}
@@ -65,7 +65,7 @@
 
 
 <!--- Friends  style="overflow: auto" can make friends list scrollable-->
-<div class="container col-lg-2 col-md-6 col-8 col-sm-7 col-xl-2">
+<div class="container col-lg-2 col-md-2 col-8 col-sm-7 col-xl-2">
   <h3 align="center">Friends</h3>
      <div class="row affix">
          {% for friend in friends %}
