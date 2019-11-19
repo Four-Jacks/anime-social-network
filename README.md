@@ -1,7 +1,7 @@
 ## Youwu.life
 
-A web based social network made for those who desire a place to keep 
-track of the anime they love and to explore the anime that friends
+A web based social network made for those who desire a place to showcase,
+keep track of the anime they love and to explore the anime that friends
 love in one place. It gives the user the ability to create a custom user 
 profile and add anime from a large database that should contain the anime 
 of their choosing as well as a friends profile to keep up with what they 
