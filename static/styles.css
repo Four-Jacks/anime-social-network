@@ -65,6 +65,9 @@ hr {
 }
 
 .footer {
+  position: absolute;
+  bottom: 0;
+  height: 60px;
   background-color:#282828;
   color:#000000 !important;
 }
