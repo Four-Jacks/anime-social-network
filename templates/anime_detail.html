@@ -16,10 +16,10 @@
         <p style="max-width: 1000px; word-wrap: break-word">{{ object.synopsis }}</p>
         {% if user.is_authenticated %}
           <li align="center" style="list-style-type:none">
-            <a href="{% url 'change_anime' operation='remove' pk=object.id %}"
-                class='btn btn-danger'>Remove Anime</a>
             <a href="{% url 'change_anime' operation='add' pk=object.id %}"
               class='btn btn-success'>Add Anime</a>
+            <a href="{% url 'change_anime' operation='remove' pk=object.id %}"
+                class='btn btn-danger'>Remove Anime</a>
           </li>
         {% endif %}
         <li class="list-group-item">Title english: {{ object.title_eng }}</li>
