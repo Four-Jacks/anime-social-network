@@ -54,9 +54,9 @@ class UserRegisterForm(forms.ModelForm):
 
 
 class EditProfileForm(forms.ModelForm):
-    avatar = forms.CharField(max_length=256, label='Profile picture url', required=False)
-    status = forms.CharField(max_length=256, label='New status message', required=False)
-    favorite_anime = forms.CharField(max_length=256, label='Favorite anime', required=False)
+    avatar = forms.CharField(max_length=256, label='Profile picture url')
+    status = forms.CharField(max_length=256, label='New status message')
+    favorite_anime = forms.CharField(max_length=256, label='Favorite anime')
 
     class Meta:
         model = UserProfile
