@@ -66,7 +66,7 @@ def view_profile(request, pk=None):
 
     try:
         friend = UserFriend.objects.get(current_user=request.user)
-        friends = friend.friend.all()
+        friends = friend.friend.all().order_by('username')
     except UserFriend.DoesNotExist:
         friends = None
 
@@ -74,26 +74,27 @@ def view_profile(request, pk=None):
         user = User.objects.get(pk=pk)
     else:
         user = request.user
+
     args = {'user': user, 'animes': animes, 'friends': friends}
     return render(request, 'profile.html', args)
 
 
 def change_anime(request, operation, pk):
-    new_anime = Anime.objects.get(pk=pk)
+    new_anime = pk#Anime.objects.get(pk=pk)
     if operation == 'add':
-        UserAnime.add_anime(request.user, new_anime)
+        UserAnime.add_anime(request.user.id, new_anime)
     elif operation == 'remove':
-        UserAnime.remove_anime(request.user, new_anime)
-    return redirect('/')
+        UserAnime.remove_anime(request.user.id, new_anime)
+    return redirect('/profile/')
 
 
 def change_friend(request, operation, pk):
-    new_friend = User.objects.get(pk=pk)
+    new_friend = pk#User.objects.get(pk=pk)
     if operation == 'add':
-        UserAnime.add_friend(request.user, new_friend)
+        UserFriend.add_friend(request.user.id, new_friend)
     elif operation == 'remove':
-        UserAnime.remove_friend(request.user, new_friend)
-    return redirect('/')
+        UserFriend.remove_friend(request.user.id, new_friend)
+    return redirect('/profile/' + pk)
 
 
 def view_friend(request, pk=None):
@@ -110,7 +111,7 @@ def view_friend(request, pk=None):
 
     try:
         friend = UserFriend.objects.get(current_user=user)
-        friends = friend.friend.all()
+        friends = friend.friend.all().order_by('username')
     except UserFriend.DoesNotExist:
         friends = None
 

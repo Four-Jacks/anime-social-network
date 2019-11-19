@@ -27,19 +27,23 @@ class UserAnime(models.Model):
     current_anime = models.ForeignKey(User, related_name='owner', null=True, on_delete=models.PROTECT)
 
     @classmethod
-    def add_anime(cls, current_anime, added_anime):
-        anime, added = cls.objects.get_or_create(
+    def add_anime(cls, current_anime, added_animepk):
+        added_anime = User.objects.get(pk=current_anime)
+        user, added = cls.objects.get_or_create(
             current_anime=current_anime
         )
-        anime.users.add(added_anime)
+        try:
+            user.anime.add(added_animepk)
+        except:
+            pass
 
     @classmethod
-    def remove_anime(cls, current_anime, added_anime):
-        anime, added = cls.objects.get_or_create(
+    def remove_anime(cls, current_anime, added_animepk):
+        added_anime = User.objects.get(pk=current_anime)
+        user, added = cls.objects.get_or_create(
             current_anime=current_anime
         )
-        anime.users.remove(added_anime)
-
+        user.anime.remove(added_animepk)
 
 # Creates user to user relationships(aka friends)
 class UserFriend(models.Model):
@@ -48,15 +52,38 @@ class UserFriend(models.Model):
     current_user = models.ForeignKey(User, related_name='has_friend', null=True, on_delete=models.PROTECT)
 
     @classmethod
-    def add_friend(cls, current_user, new_friend):
-        friend, created = cls.objects.get_or_create(
-            current_user=current_user
-        )
-        friend.users.add(new_friend)
+    def add_friend(cls, current_userpk, new_friendpk):
+        current = User.objects.get(pk=current_userpk)
+        current_user = User.objects.get(pk=new_friendpk)
+        if current != current_user:
+            current_user, created = cls.objects.get_or_create(
+                current_user=current_user
+            )
+            try:
+                current_user.friend.add(current_userpk)
+            except:
+                pass
+
+            current_user = current
+            current_user, created = cls.objects.get_or_create(
+                current_user=current_user
+            )
+            try:
+                current_user.friend.add(new_friendpk)
+            except:
+                pass
 
     @classmethod
-    def remove_friend(cls, current_user, new_friend):
-        friend, created = cls.objects.get_or_create(
-            current_user=current_user
-        )
-        friend.users.remove(new_friend)
+    def remove_friend(cls, current_userpk, new_friendpk):
+        current = User.objects.get(pk=current_userpk)
+        current_user = User.objects.get(pk=new_friendpk)
+        if current != current_user:
+            current_user, created = cls.objects.get_or_create(
+                current_user=current_user
+            )
+            current_user.friend.remove(current_userpk)
+            current_user = current
+            current_user, created = cls.objects.get_or_create(
+                current_user=current_user
+            )
+            current_user.friend.remove(new_friendpk)

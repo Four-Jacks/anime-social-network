@@ -32,6 +32,10 @@ h1 {
   color:#FFFFFF !important;
 }
 
+hr {
+    background-color: #F8F8F8;
+}
+
 .form {
   color:#FFFFFF !important;
 }
@@ -49,52 +53,6 @@ h1 {
 .row {
   color:#FFFFFF !important;
 }
-
-@media {
-    .profile {
-      margin-left: 0rem !important;
-    }
-    .list-friends {
-      margin-right: 2rem !important;
-    }
-}
-
-@media (min-width: 576px) {
-  .profile {
-    margin-left: 0rem !important;
-  }
-  .list-friends {
-    margin-right: -3rem !important;
-  }
-}
-
-@media (min-width: 768px) {
-  .profile {
-    margin-left: -3rem !important;
-  }
-  .list-friends {
-    margin-right: -3.8rem !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .profile {
-    margin-left: -3rem !important;
-  }
-  .list-friends {
-    margin-right: -5rem !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .profile {
-    margin-left: -4rem !important;
-  }
-  .list-friends {
-    margin-right: -7 !important;
-  }
-}
-
 
 .footer {
   background-color:#282828;

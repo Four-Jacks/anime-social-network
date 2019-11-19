@@ -1,27 +1,21 @@
 {% extends "base.html" %}
 
 {% block title %}
-<title>Friends</title>
+<title>Users</title>
 {% endblock %}
 
 {% block content %}
-    <h1>Friends</h1>
-    <form method="post">
-        <input type="text" placeholder="Search friends" style="background-color:#696969;color:#FFFFFF">
-    </form>
-    <h2>Might change this from friends to users?</h2>
-<div class="container">
-    <!--- Friends -->
-      <div class="row affix">
-        <div class="col">
-          <ul class="list-friends">
-            {% for friend in friends %}
-             <li class="list-group-item">{{ friend.username|title }}</li>
-             {% endfor %}
-           </ul>
-        </div>
+    <h1 align="center">Users</h1>
+     <div class="container" style="max-width: 400px;">
+          <div class="row affix justify-content-center" style="overflow:auto;max-height:540px;">
+              {% for user in users %}
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                  <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+                     <a href="{% url 'friend_view' pk=user.id %}">{{ user|title }}</a>
+                  </div>
+             </div>
+            {% endfor %}
+          </div>
       </div>
-     </div>
-    <!--- End of friends-->
 
 {% endblock %}

@@ -24,14 +24,12 @@
 <!--- Content of page -->
 <div class="parent-container d-flex flex-wrap flex-lg-nowrap flex-md-nowrap">
 <!--- Profile Section -->
-<div class="container-fluid col-lg-3 col-md-4 col-xs-12 col-sm-12 col-xl-3">
+<div class="container-fluid col-lg-2 col-md-3 col-10 col-sm-10 col-xl-2">
      <div class="row affix">
        <div class="col">
-           <ul class="list-group profile">
+           <ul class="list-group profile" style="display:table-row;" >
               <h3 align="center">{{ user|title }}</h3>
               <li class="list-group-item" align="center"><img src="https://thehaletelescope.com/wp-content/uploads/2018/10/weeb.jpg" class="col-4 col-sm-4 col-md-10 col-lg-10 img-fluid"></li>
-              <li class="list-group-item">Location</li>
-              <li class="list-group-item">Bio</li>
               <li class="list-group-item">{{ user.userprofile.status }}</li>
               <li class="list-group-item">Favorite Anime: {{ user.userprofile.favorite_anime }}</li>
             </ul>
@@ -41,12 +39,11 @@
  <!--- End of profile column -->
 
 <!--- Top 5 section -->
-<div class="container-fluid padding ml-auto">
-  <hr class="my-4">
+<div class="container-fluid col-lg-8 col-md-7 col-12 col-sm-12 col-xl-8">
 <h3 align="center">Your Anime</h3>
-   <div class="row affix" style="overflow:auto;max-height: 450px;padding-top:20px;">
+   <div class="row affix" style="overflow:auto;max-height: 540px;">
       {% for anime in animes %}
-      <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-3 border border-secondary">
+      <div class="col-6 col-sm-6 col-md col-lg col-xl border border-secondary">
            <div style="padding-top:20px;" align="center">
                <p>{{ anime.title }}</p>
            </div>
@@ -56,23 +53,22 @@
       </div>
          {% endfor %}
     </div>
-<hr class="my-4">
 </div>
 <!--- End of top 5-->
 
 
 <!--- Friends  style="overflow: auto" can make friends list scrollable-->
-<div class="container-fluid col-lg-2 col-md-2 col-xs-2 col-sm-10 col-xl-2">
-     <div class="row affix">
-       <div class="col">
-           <ul class="list-friends" style="overflow:auto;max-height: 450px;padding-top:20px;">
-             <h3 align="center">Friends</h3>
-             {% for friend in friends %}
-              <li class="list-group-item"><a href="{% url 'friend_view' pk=friend.id %}">{{ friend.username }}</a></li>
-              {% endfor %}
-            </ul>
+<div class="container col-lg-2 col-md-2 col-8 col-sm-7 col-xl-2">
+  <h3 align="center">Friends</h3>
+     <div class="row affix" style="overflow:auto;max-height: 540px;">
+         {% for friend in friends %}
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+             <div style="padding-bottom:20px;padding-top:20px;background:#282828;" align="center">
+                <a href="{% url 'friend_view' pk=friend.id %}">{{ friend.username|title }}</a>
+             </div>
         </div>
-     </div>
+           {% endfor %}
+      </div>
  </div>
 <!--- End of friends-->
 

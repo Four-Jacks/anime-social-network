@@ -8,18 +8,29 @@
 
 {% block content %}
 {% load bootstrap4 %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
 
-<body>
-    <form  class="form" method="POST">
+  <h1 align="center">Register</h1>
+  <div class="container">
+    <div class="row affix justify-content-center">
+        <div class="col col-10 col-sm-10 col-md-9 col-lg-6 col-xl-5">
+        <form  class="form" method="POST">
         {% csrf_token %}
         {% bootstrap_form form %}
+        <p>Our site does not use HTTPS which means that your password is
+          susceptible to being intercepted. As a result, we ask that you
+          use a password unique to this site. <span style="color:red">&#9829;</span></p>
+          <p><a href="https://www.youtube.com/watch?v=w0QbnxKRD0w">Learn more</a></p>
         <input type="submit" class="btn btn-primary" value="Sign up">
-    </form>
-</body>
+      </form>
+    </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 {% endblock %}
