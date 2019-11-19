@@ -75,6 +75,12 @@ hr {
     }
 }
 
+@media (min-width: 2000px) {
+    .extra {
+         padding-top:25rem !important;
+    }
+}
+
 /*
 Extra small (xs) devices (portrait phones, less than 576px)
 No media query since this is the default in Bootstrap
