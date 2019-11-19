@@ -69,9 +69,9 @@ hr {
   color:#000000 !important;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
     .footer {
-        position: absolute !important;
+         position: absolute;
     }
 }
 
